@@ -13,11 +13,8 @@ class UsersController < ApplicationController
     
     # GROUP ACTIVITY #1
     def create
-        # Add Code to Check Whether Processable Entity
-        
-        # If Yes, Return New User in JSON Format With Status of Created
-
-        # If No, Return Errors With Status of Unprocessable Entity
+        user = User.create!(user_params)
+        render json: user, status: :created
     end
 
     private
@@ -25,5 +22,6 @@ class UsersController < ApplicationController
     # GROUP ACTIVITY #1
     def user_params
         # Add Strong Params for Each New User
+        params.permit(:name, :admin)
     end
 end

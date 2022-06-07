@@ -6,5 +6,14 @@ class Production < ApplicationRecord
     # GROUP ACTIVITY #2
     
     # Add Validation for "title" => Must Be Present / Unique
-    # Add Validation for "budget" => Must Be Any Number Other Than 0
+    validates :title, presence: true, uniqueness: true 
+
+    # Add Validation for "budget" => Must Be Any Number Greater Than 0
+    validates :budget, numericality: { greater_than: 0 }
+
+    # validate :some_function
+
+    # def some_function
+    #     # apply additional / more complex validation logic
+    # end
 end

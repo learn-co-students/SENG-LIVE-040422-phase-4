@@ -13,11 +13,8 @@ class TicketsController < ApplicationController
 
     # GROUP ACTIVITY #1
     def create
-        # Add Code to Check Whether Processable Entity
-        
-        # If Yes, Return New Ticket in JSON Format With Status of Created
-
-        # If No, Return Errors With Status of Unprocessable Entity
+        ticket = Ticket.create!(ticket_params)
+        render json: ticket, status: :created
     end
 
     private
@@ -25,5 +22,6 @@ class TicketsController < ApplicationController
     # GROUP ACTIVITY #1
     def ticket_params
         # Add Strong Params for Each New Ticket
+        params.permit(:price, :user_id, :production_id)
     end
 end
