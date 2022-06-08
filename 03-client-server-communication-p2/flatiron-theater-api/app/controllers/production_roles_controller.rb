@@ -22,26 +22,16 @@ class ProductionRolesController < ApplicationController
 
     # PUT "/production_roles/:id"
     def update
-        # Find Production Role via Params (id)
-
-        # If Found, Render Production Role With Created Status
-
-            # Update Production Role with production_role_params
-
-            # If Errors, Raise Exception + Render Errors in JSON Format w/ Unprocessable Entity Status
-
-        # If Not Found, Raise Exception + Render Errors in JSON Format w/ Not Found Status
+        production_role = ProductionRole.find(params[:id])
+        production_role.update!(production_role_params)
+        render json: production_role, status: :created
     end
 
     # DELETE "/production_roles/:id"
     def destroy
-        # Find Production Role via Params (id)
-
-        # If Found, Destroy Production Role
-
-            # Render 204 Status Code (No Content) / Send No Content in Response 
-
-        # If Not Found, Raise Exception + Render Errors in JSON Format w/ Not Found Status
+        production_role = ProductionRole.find(params[:id])
+        production_role.destroy
+        head :no_content
     end
 
     private

@@ -22,26 +22,16 @@ class TicketsController < ApplicationController
 
     # PUT "/tickets/:id"
     def update
-        # Find Ticket via Params (id)
-
-        # If Found, Render Ticket With Created Status
-
-            # Update Ticket with ticket_params
-
-            # If Errors, Raise Exception + Render Errors in JSON Format w/ Unprocessable Entity Status
-
-        # If Not Found, Raise Exception + Render Errors in JSON Format w/ Not Found Status
+        ticket = Ticket.find(params[:id])
+        ticket.update!(ticket_params)
+        render json: ticket, status: :created
     end
 
     # DELETE "/tickets/:id"
     def destroy
-        # Find Ticket via Params (id)
-
-        # If Found, Destroy Ticket
-
-            # Render 204 Status Code (No Content) / Send No Content in Response 
-
-        # If Not Found, Raise Exception + Render Errors in JSON Format w/ Not Found Status
+        ticket = Ticket.find(params[:id])
+        ticket.destroy
+        head :no_content
     end
 
     private

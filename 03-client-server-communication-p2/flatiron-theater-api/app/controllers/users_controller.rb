@@ -22,26 +22,17 @@ class UsersController < ApplicationController
 
     # PUT "/users/:id"
     def update
-        # Find User via Params (id)
-
-        # If Found, Render User With Created Status
-
-            # Update User with user_params
-
-            # If Errors, Raise Exception + Render Errors in JSON Format w/ Unprocessable Entity Status
-
-        # If Not Found, Raise Exception + Render Errors in JSON Format w/ Not Found Status
+        user = User.find(params[:id])
+        user.update!(user_params)
+        render json: user, status: :created
     end
 
     # DELETE "/users/:id"
     def destroy
-        # Find User via Params (id)
-
-        # If Found, Destroy User
-
-            # Render 204 Status Code (No Content) / Send No Content in Response 
-
-        # If Not Found, Raise Exception + Render Errors in JSON Format w/ Not Found Status
+        user = User.find(params[:id])
+        user.destroy
+        head :no_content
+        # render json: user
     end
 
     private

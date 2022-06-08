@@ -1,5 +1,13 @@
+# FAKER GEM
+
+# 50.times do
+#     Production.create!(
+#         # ...
+#     )
+# end
+
 # Initialize + Save Two Productions
-p1 = Production.create(
+p1 = Production.create!(
     title: 'Hamlet', 
     genre: 'drama', 
     director: 'Bill Shakespeare', 
@@ -9,7 +17,7 @@ p1 = Production.create(
     ongoing: true
 )
 
-p2 = Production.create(
+p2 = Production.create!(
     title: 'cats', 
     genre: 'musical', 
     director: 'Andrew Lloyd Webber', 
@@ -20,16 +28,16 @@ p2 = Production.create(
 )
 
 # Initialize + Save One Production Role
-ProductionRole.create(role: 'Hamlet', understudy: true, production: p1)
+ProductionRole.create!(role: 'Hamlet', understudy: true, production: p1)
 
 # Initialize + Save Two Users
-u1 = User.create(name: 'Louis', email: 'louis@flatironschool.com', admin: true)
-u2 = User.create(name: 'Grace', email: 'grace@flatironschool.com', admin: true)
+u1 = User.create!(name: 'Louis', email: 'louis@flatironschool.com', admin: true)
+u2 = User.create!(name: 'Grace', email: 'grace@flatironschool.com', admin: true)
 
 # Initialize + Save Three Tickets
-Ticket.create(user: u1, production: p2, price: 65.00)
-Ticket.create(user: u2, production: p2, price: 65.00)
-Ticket.create(user: u2, production: p1, price: 65.00)
+Ticket.create!(user: u1, production: p2, price: 65.00)
+Ticket.create!(user: u2, production: p2, price: 65.00)
+Ticket.create!(user: u2, production: p1, price: 65.00)
 
 # Confirm Seeding Has Completed
 puts '🌱 Seeding Done!'
