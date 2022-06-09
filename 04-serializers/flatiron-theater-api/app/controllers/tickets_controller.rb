@@ -8,7 +8,7 @@ class TicketsController < ApplicationController
     # GET "/tickets/:id"
     def show
         ticket = Ticket.find(params[:id])
-        render json: ticket, include: [:production, :user]
+        render json: ticket
     end 
 
     # POST "/tickets"

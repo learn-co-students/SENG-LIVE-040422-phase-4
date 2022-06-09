@@ -8,7 +8,7 @@ class ProductionsController < ApplicationController
     # GET "/productions/:id"
     def show
         production = Production.find(params[:id])
-        render json: production, include: :production_roles
+        render json: production
     end
 
     # POST "/productions"
