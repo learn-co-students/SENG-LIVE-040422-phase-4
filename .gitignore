@@ -1,0 +1,3 @@
+# Instruct Git to omit .DS_Store files from version control
+
+.DS_Store
