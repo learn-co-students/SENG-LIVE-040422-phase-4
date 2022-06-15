@@ -1,8 +1,8 @@
 # Authentication
 
 ## Lecture Objectives
-- Implement sessions to keep users logged in 
-- Implement sessions to give users specific access rights
+Implement sessions to keep users logged in 
+Implement sessions to give users specific access rights
 
 
 ### Cookies and Sessions 
