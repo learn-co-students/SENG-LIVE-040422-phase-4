@@ -104,7 +104,7 @@ const App = () => {
 export default App;
 ```
 
-This will only Authenticate a user for one route and one action. If we want to authenticate a user for multiple actions we will need to add a auth action in the action controller that runs before every action.
+This will only authorize a user for one route and one action. If we want to authorize a user for multiple actions we will need to add a auth action in the action controller that runs before every action.
 >Note: We can skip a before action with skip_before_action
 
 
