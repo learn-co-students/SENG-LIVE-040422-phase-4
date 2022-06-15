@@ -1,5 +1,9 @@
 class UsersController < ApplicationController
     # Group Activity => Set 'authorize_user' to Skip Create Action
+    # before_action
+    # skip_before_action
+    skip_before_action :is_authorized?, except: [:create]
+    before_action :is_admin?, only: [:update, :destroy]
 
     # GET "/users"
     def index 

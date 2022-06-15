@@ -36,7 +36,7 @@ function Auth({setUser, setIsAuthenticated}) {
     }
     return (
         <> 
-        <h1>Sign UP</h1>
+        <h1>Sign Up</h1>
         <form onSubmit={onSubmit}>
         <label>
           Username
